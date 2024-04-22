@@ -1,0 +1,23 @@
+//Loader overlay
+.loader-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 998;
+  min-height: 200px;
+  .loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100px;
+    height: 40px;
+    margin-left: -50px;
+    margin-top: -20px;
+    z-index: 999;
+    text-align: center;
+  }
+}

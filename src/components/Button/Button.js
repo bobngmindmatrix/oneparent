@@ -6,9 +6,10 @@ const Button = forwardRef(
   (
     {
       type = "button",
+      color = "primary",
       className = "",
       disabled = false,
-      transparent,
+      transparent = false,
       requireLogin,
       onClick,
       children,
@@ -19,7 +20,7 @@ const Button = forwardRef(
     const auth = useRecoilValue(authAtom);
     const setShowLogin = useSetRecoilState(showLoginAtom);
     const defaultOnClick = () => {
-      // if (type === "submit") return;
+      if (type === "submit") return;
       // toastDeveloping(addToast);
     };
     const handleClick = (e) => {
@@ -34,22 +35,25 @@ const Button = forwardRef(
 
     const buttonTypeCss = () => {
       if (transparent) return "";
-      if (disabled) return "!bg-gray-4 border !border-gray-4 cursor-auto";
-      switch (type) {
+      if (disabled) return "!bg-gray-400 border !border-gray-400 cursor-auto";
+      switch (color) {
         case "primary":
-          return "btn-primary";
+          return "bg-blue-400 text-white rounded-lg";
         case "secondary":
           return "btn-secondary";
         case "danger":
           return "btn-danger";
+        default:
+          return "bg-blue-400 text-white rounded-lg";
       }
     };
 
     return (
       <button
         ref={ref}
-        type={type}
-        className={`${buttonTypeCss()} ${className || ``} group`}
+        className={`${buttonTypeCss()} ${
+          className || ``
+        } group py-3 px-4 font-medium`}
         onClick={handleClick}
         disabled={disabled}
         {...rest}
