@@ -1,7 +1,11 @@
+"use client";
 import React from "react";
 import SideMenu from "@/components/Common/SideMenu/SideMenu";
 import TopBar from "@/components/Common/TopBar/TopBar";
-const CustomLayout = ({ children }) => {
+import { useRequireLogin } from "@/hooks/auth";
+const MainLayout = ({ children }) => {
+  useRequireLogin();
+
   return (
     <main className={"flex bg-gray-100 min-h-screen"}>
       <SideMenu />
@@ -12,4 +16,4 @@ const CustomLayout = ({ children }) => {
     </main>
   );
 };
-export default CustomLayout;
+export default MainLayout;

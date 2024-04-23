@@ -7,7 +7,7 @@ const SideMenuItem = ({ active = false, label, url }) => {
   return (
     <Link
       className={clsx(
-        `flex px-4 py-3 font-medium rounded-lg hover:bg-blue-500 hover:text-white`,
+        `flex px-4 py-3 font-medium rounded-lg hover:bg-blue-100`,
         {
           "bg-blue-500 text-white": active,
         }

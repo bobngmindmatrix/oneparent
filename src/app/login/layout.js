@@ -1,4 +1,4 @@
-import "./globals.css";
+import "@/app/globals.css";
 import "@/assets/app.scss";
 
 import { Inter } from "next/font/google";
@@ -7,21 +7,17 @@ const inter = Inter({
   display: "swap",
 });
 
-import MainLayout from "@/app/MainLayout";
 import AppProviders from "@/providers/AppProviders";
-
 export const metadata = {
-  title: `One Parent`,
-  description: `Connecting Parent, Children & Teacher`,
+  title: `Login`,
+  description: `Login page`,
 };
 
-export default function RootLayout({ children }) {
+export default function LoginLayout({ children }) {
   return (
     <html lang="en" className={inter.className}>
       <body suppressHydrationWarning={true}>
-        <AppProviders>
-          <MainLayout>{children}</MainLayout>
-        </AppProviders>
+        <AppProviders>{children}</AppProviders>
       </body>
     </html>
   );

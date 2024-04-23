@@ -20,17 +20,20 @@ const items = [
     icon: null,
   },
 ];
+
+const hideSideBarRoutes = ["/login", "/register"];
+
 const SideMenu = ({}) => {
   const isMobile = useIsMobile();
   const pathname = usePathname();
-  const router = useRouter();
+
   const render = () => {
     return (
       <div className={"flex flex-col w-full gap-6 py-6 px-4"}>
         <div className={"w-full flex items-center justify-center"}>
           <Logo width={150} />
         </div>
-        <div className={"mt-20 flex flex-col gap-2"}>
+        <div className={"mt-20 flex flex-col"}>
           {items.map((item) => (
             <SideMenuItem
               key={item.key}

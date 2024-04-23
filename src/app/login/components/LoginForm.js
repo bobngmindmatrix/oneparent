@@ -45,7 +45,7 @@ const LoginForm = ({}) => {
       refreshToken: "1234",
     };
     setAuth(buildAuthAtom(true, response.accessToken, response.user));
-    router.push("/");
+    router.replace("/dashboard");
   };
 
   return (

@@ -3,9 +3,11 @@ import { Button } from "@/components";
 
 import React from "react";
 import { Menu, MenuItem } from "@mui/material";
+import { useRouter } from "next/navigation";
 const UserAvatar = ({}) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
+  const router = useRouter();
   const handleClick = (event) => {
     setAnchorEl(anchorEl ? null : event.currentTarget);
   };
@@ -41,8 +43,7 @@ const UserAvatar = ({}) => {
         style={{ shadow: null }}
       >
         <MenuItem onClick={() => console.log("Hi")}>Profile</MenuItem>
-        <MenuItem onClick={() => console.log("Hi")}>My account</MenuItem>
-        <MenuItem onClick={() => console.log("Hi")}>Logout</MenuItem>
+        <MenuItem onClick={() => router.replace("/logout")}>Logout</MenuItem>
       </Menu>
     </Button>
   );
